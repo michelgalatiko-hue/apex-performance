@@ -1,0 +1,644 @@
+/* ===================================
+   RESET & VARIÁVEIS BASE
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0A0A0A;
+    color: #FFFFFF;
+    position: relative;
+}
+
+/* ===================================
+   VÍDEO DE FUNDO & OVERLAY (FIXOS)
+   =================================== */
+
+.video-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    pointer-events: none;
+}
+
+.overlay, 
+.overlay-global {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ===================================
+   HEADER PREMIUM (MENU TOPO)
+   =================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 18px 10%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #D4AF37;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #D4AF37;
+}
+
+/* ===================================
+   HERO SECTION (CONTEÚDO PRINCIPAL)
+   =================================== */
+
+.hero {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 11;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+.hero p {
+    margin: 30px auto;
+    font-size: 22px;
+    color: #CFCFCF;
+    max-width: 650px;
+}
+
+/* BOTÃO CTA PREMIUM */
+
+.btn {
+
+    position: relative;
+    overflow: hidden;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px 45px;
+
+    background: #D4AF37;
+    color: #000000;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
+
+    margin-top: 30px;
+
+    white-space: nowrap;
+
+    box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+
+}
+
+
+
+/* brilho passando */
+
+.btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: rgba(255,255,255,0.35);
+
+    transform: skewX(-25deg);
+
+    transition: .6s;
+
+}
+
+
+
+.btn:hover::before {
+
+    left: 130%;
+
+}
+
+
+
+.btn:hover {
+
+    background: #F5D76E;
+
+    transform: translateY(-5px) scale(1.05);
+
+    box-shadow: 0 15px 40px rgba(212,175,55,0.45);
+
+}
+
+/* ===================================
+   CARROSSEL DE RESULTADOS
+   ANTES E DEPOIS
+   =================================== */
+
+
+.slider-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 50px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.slide {
+
+    display: none;
+    text-align: center;
+    animation: slideFade 0.6s ease;
+
+}
+
+
+.slide.active {
+    display: block;
+}
+
+
+
+@keyframes slideFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+
+
+
+/* FOTOS LADO A LADO */
+
+
+.antes-depois {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+}
+
+
+
+.foto-box {
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid #D4AF37;
+    height: 500px;
+
+}
+
+
+
+.foto-box img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+
+}
+
+
+
+.foto-box:hover img {
+
+    transform: scale(1.05);
+
+}
+
+
+
+
+
+/* ETIQUETA ANTES E DEPOIS */
+
+
+.foto-box span {
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    background: #D4AF37;
+    color: #000;
+
+    padding: 8px 20px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+    font-size: 14px;
+
+}
+
+
+
+
+
+/* RESULTADO */
+
+
+.resultado {
+
+    margin-top: 30px;
+
+}
+
+
+
+.resultado strong {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 55px;
+
+    color: #D4AF37;
+
+    display: block;
+
+}
+
+
+
+.resultado p {
+
+    color: #ccc;
+
+    font-size: 18px;
+
+}
+
+
+
+
+
+/* BOTÕES DO CARROSSEL */
+
+
+.slider-btn {
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 2px solid #D4AF37;
+
+    background: transparent;
+
+    color: #D4AF37;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+
+.slider-btn:hover {
+
+    background: #D4AF37;
+
+    color: #000;
+
+}
+
+/* ===================================
+   CARROSSEL DE RESULTADOS
+   =================================== */
+
+.slider-container {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.slide {
+    display: none;
+    text-align: center;
+}
+
+
+.slide.active {
+    display: block;
+}
+
+
+.slide img {
+    width: 100%;
+    max-width: 700px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: auto;
+    display: block;
+}
+
+
+/* BOTÕES DO SLIDER */
+
+.slider-btn {
+    position: absolute;
+    z-index: 5;
+    background: #D4AF37;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.slider-btn:hover {
+    transform: scale(1.1);
+}
+
+
+.prev {
+    left: 20px;
+}
+
+
+.next {
+    right: 20px;
+}
+
+/* ===================================
+   FOTO DO PERSONAL
+   =================================== */
+
+.sobre-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sobre-img img {
+
+    width: 100%;
+    max-width: 450px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+/* ===================================
+   BOTÃO HEADER
+   =================================== */
+
+.header-btn {
+
+    background: #D4AF37;
+    color: #000;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+
+}
+
+
+.header-btn:hover {
+
+    background: #F5D76E;
+    transform: translateY(-3px);
+
+}
+
+/* ===================================
+   WHATSAPP FLUTUANTE
+   =================================== */
+
+.whatsapp {
+
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #D4AF37;
+    color: #000;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    z-index: 1000;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    transition: all .3s ease;
+
+}
+
+
+.whatsapp i {
+
+    font-size: 22px;
+
+}
+
+
+.whatsapp:hover {
+
+    transform: translateY(-5px);
+
+    background: #F5D76E;
+
+}
+
+/* ===================================
+   EFEITO CINEMÁTICO VIDEO BACKGROUND
+   =================================== */
+
+.video-bg {
+    animation: videoZoom 20s ease-in-out infinite alternate;
+}
+
+
+@keyframes videoZoom {
+
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+
+}
+
+/* ===================================
+   TITULOS PREMIUM DOURADOS
+   =================================== */
+
+.titulo-secao h2 {
+
+    color: #D4AF37;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+/* ===================================
+   TITULOS DOS CARDS PREMIUM
+   =================================== */
+
+.especialidade-card h3,
+.modalidade-card h3,
+.depoimento-card h5 {
+
+    color: #D4AF37;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: 700;
+
+}
+
+/* ===================================
+   NUMEROS PREMIUM DOURADOS
+   =================================== */
+
+.numero-card h3 {
+
+    color: #D4AF37;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: 800;
+
+    font-size: 55px;
+
+}

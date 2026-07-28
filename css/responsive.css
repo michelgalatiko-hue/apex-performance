@@ -1,0 +1,300 @@
+/* ===================================
+   RESPONSIVIDADE (TABLETS E CELULARES)
+   =================================== */
+
+/* --- TABLETS E CELULARES (Até 768px) --- */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(10, 10, 10, 0.95);
+    }
+
+    .logo {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    /* HERO */
+    .hero {
+        padding-top: 170px;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    /* ESTRUTURA GERAL DAS SEÇÕES */
+    section {
+        padding: 60px 5%;
+    }
+
+    .titulo-secao h2,
+    .cta-content h2 {
+        font-size: 30px;
+    }
+
+    .titulo-secao p,
+    .cta-content p {
+        font-size: 16px;
+    }
+
+    /* CARDS E CONTAINERS */
+    .transformacao-card,
+    .depoimento-card,
+    .especialidade-card,
+    .numero-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .transformacao-card img {
+        height: 350px;
+    }
+
+    /* BOTÕES */
+    .btn {
+        width: 100%;
+        max-width: 340px;
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    /* BOTÃO WHATSAPP */
+    .whatsapp {
+        right: 20px;
+        bottom: 20px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* --- CELULARES PEQUENOS (Até 480px) --- */
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .titulo-secao h2 {
+        font-size: 26px;
+    }
+
+    .numero-card h3 {
+        font-size: 36px;
+    }
+
+    .faq-item h3 {
+        font-size: 18px;
+    }
+
+    .faq-item p {
+        font-size: 14px;
+    }
+}
+
+/* ===================================
+   AJUSTE CARROSSEL MOBILE
+   =================================== */
+
+@media (max-width: 768px) {
+
+    .slider-container {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+
+    .slide img {
+
+        width: 100%;
+        height: auto;
+        max-height: 450px;
+        object-fit: contain;
+        border-radius: 15px;
+
+    }
+
+
+    .slider-btn {
+
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+
+    }
+
+
+    .prev {
+        left: 5px;
+    }
+
+
+    .next {
+        right: 5px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .sobre-img img {
+
+        max-width: 320px;
+        height: 380px;
+        object-fit: cover;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+.header-btn {
+
+    padding: 10px 22px;
+    font-size: 13px;
+
+}
+
+
+.whatsapp {
+
+    right: 15px;
+    bottom: 15px;
+
+    padding: 12px 18px;
+
+    font-size: 13px;
+
+}
+
+}
+
+/* ===================================
+   AJUSTE DEPOIMENTOS MOBILE
+   =================================== */
+
+@media (max-width: 768px) {
+
+    .depoimentos-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+
+    .depoimento-card {
+
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 25px;
+
+    }
+
+}
+
+/* ===================================
+   AJUSTE DE ESPAÇAMENTO DE TEXTOS MOBILE
+   =================================== */
+
+@media (max-width: 768px) {
+
+
+    /* Textos das seções */
+
+    .titulo-secao {
+        margin-bottom: 35px;
+    }
+
+
+    .titulo-secao p {
+        margin-top: 15px;
+        line-height: 1.6;
+    }
+
+
+
+    /* Cards em geral */
+
+    .especialidade-card,
+    .modalidade-card,
+    .depoimento-card,
+    .faq-item {
+
+        margin-bottom: 20px;
+        line-height: 1.6;
+
+    }
+
+
+
+    /* Parágrafos dentro dos cards */
+
+    .especialidade-card p,
+    .modalidade-card p,
+    .depoimento-card p,
+    .faq-item p {
+
+        margin-top: 15px;
+        line-height: 1.7;
+
+    }
+
+
+
+    /* Sobre o personal */
+
+    .sobre-texto h3 {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .sobre-texto p {
+
+        line-height: 1.7;
+        margin-bottom: 20px;
+
+    }
+
+
+    .sobre-texto ul li {
+
+        margin-bottom: 12px;
+
+    }
+
+
+
+}
