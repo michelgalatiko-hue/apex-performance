@@ -642,3 +642,13 @@ nav a:hover {
     font-size: 55px;
 
 }
+
+/* ===================================
+   IMAGEM RESERVA PARA MOBILE
+   =================================== */
+
+.video-bg {
+    background-image: url("../img/personal.jpg");
+    background-size: cover;
+    background-position: center;
+}

@@ -22,3 +22,22 @@ if (video) {
     });
 
 }
+
+const video = document.querySelector(".video-bg");
+
+if (video) {
+
+    video.muted = true;
+    video.playsInline = true;
+
+    const playVideo = () => {
+
+        video.play().catch(() => {
+            console.log("Autoplay bloqueado pelo iPhone");
+        });
+
+    };
+
+    playVideo();
+
+}
