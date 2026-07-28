@@ -8,3 +8,17 @@ if (header) {
         header.classList.toggle("scrolled", window.scrollY > 50);
     });
 }
+
+// Forçar tentativa de autoplay no iPhone
+
+const video = document.querySelector(".video-bg");
+
+if (video) {
+
+    video.play().catch(() => {
+
+        console.log("Autoplay bloqueado pelo navegador");
+
+    });
+
+}
